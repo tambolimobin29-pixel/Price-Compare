@@ -14,6 +14,7 @@ import {
   Tag,
 } from 'lucide-react';
 import { Product, StoreId } from '@/types/product';
+import { getDealUrl } from '@/services/dealUrl';
 import { SafeImage } from '../common/SafeImage';
 import { StoreBadge } from '../common/StoreBadge';
 import { PriceTag, formatINR } from '../common/PriceTag';
@@ -246,7 +247,7 @@ export const DealsPageView: React.FC<DealsPageViewProps> = ({
                       Compare
                     </Link>
                     <a
-                      href={bestOffer.productUrl}
+                      href={getDealUrl(bestOffer, prod.title)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs text-center transition flex items-center justify-center gap-1"
@@ -333,7 +334,7 @@ export const DealsPageView: React.FC<DealsPageViewProps> = ({
                       Compare
                     </Link>
                     <a
-                      href={bestOffer.productUrl}
+                      href={getDealUrl(bestOffer, prod.title)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="py-2 px-3 rounded-xl bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs text-center transition flex items-center justify-center gap-1"
