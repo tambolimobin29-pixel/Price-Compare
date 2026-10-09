@@ -366,7 +366,7 @@ export const MOCK_PRODUCTS: Product[] = [
     title: 'Sony WH-1000XM5 Wireless Industry Leading Noise Canceling Headphones',
     slug: 'sony-wh-1000xm5-wireless-noise-canceling-headphones-black',
     brand: 'Sony',
-    category: 'Audio & Wearables',
+    category: 'Headphones & Audio',
     subCategory: 'Headphones',
     description:
       'With two processors and eight microphones, the Sony WH-1000XM5 headphones elevate noise cancellation and call quality to industry-leading heights. Lightweight design with soft fit leather for all-day comfort.',
@@ -676,7 +676,7 @@ export const MOCK_PRODUCTS: Product[] = [
     title: 'LG 55-inch 4K OLED Smart TV (OLED55C3PSA) with Dolby Vision & Atmos',
     slug: 'lg-55-inch-oled-c3-4k-smart-tv',
     brand: 'LG',
-    category: 'Home & Kitchen',
+    category: 'TVs & Home Theatre',
     subCategory: 'Smart TVs',
     description:
       'Experience infinite contrast and over 8.3 million self-lit pixels with the LG C3 OLED TV. Powered by the α9 AI Processor 4K Gen6, with Brightness Booster, 0.1ms response time, and 4x HDMI 2.1 ports for next-gen gaming.',
