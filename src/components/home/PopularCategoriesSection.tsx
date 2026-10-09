@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Layers } from 'lucide-react';
 import { CategoryCard, CategoryItem } from './CategoryCard';
+import { Product } from '@/types/product';
 
 export const POPULAR_CATEGORIES: CategoryItem[] = [
   {
@@ -10,7 +11,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     shortDescription: 'Flagships, 5G phones & foldable tech',
     productCount: 42,
     image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02540?auto=format&fit=crop&w=500&q=80',
-    slug: 'Mobiles%20%26%20Tablets',
+    slug: 'Mobiles & Tablets',
   },
   {
     id: 'cat-laptops',
@@ -18,7 +19,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     shortDescription: 'MacBooks, gaming laptops & ultrabooks',
     productCount: 28,
     image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80',
-    slug: 'Laptops%20%26%20Computers',
+    slug: 'Laptops & Computers',
   },
   {
     id: 'cat-headphones',
@@ -26,7 +27,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     shortDescription: 'Noise-canceling & wireless earbuds',
     productCount: 35,
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80',
-    slug: 'Audio%20%26%20Wearables',
+    slug: 'Headphones & Audio',
   },
   {
     id: 'cat-tvs',
@@ -34,7 +35,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     shortDescription: '4K OLED, QLED & smart screens',
     productCount: 19,
     image: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=500&q=80',
-    slug: 'Home%20%26%20Kitchen',
+    slug: 'TVs & Home Theatre',
   },
   {
     id: 'cat-smartwatches',
@@ -42,7 +43,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     shortDescription: 'Fitness trackers, Apple & Galaxy watch',
     productCount: 24,
     image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80',
-    slug: 'Audio%20%26%20Wearables',
+    slug: 'Smartwatches & Wearables',
   },
   {
     id: 'cat-cameras',
@@ -50,7 +51,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     shortDescription: 'Mirrorless, DSLR & action vlogging',
     productCount: 16,
     image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=500&q=80',
-    slug: 'Laptops%20%26%20Computers',
+    slug: 'Cameras & Photography',
   },
   {
     id: 'cat-gaming',
@@ -58,7 +59,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     shortDescription: 'PlayStation 5, Xbox, GPUs & gear',
     productCount: 22,
     image: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80',
-    slug: 'Laptops%20%26%20Computers',
+    slug: 'Gaming & Consoles',
   },
   {
     id: 'cat-appliances',
@@ -66,7 +67,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     shortDescription: 'Vacuums, air purifiers & smart home',
     productCount: 31,
     image: 'https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=500&q=80',
-    slug: 'Home%20%26%20Kitchen',
+    slug: 'Home & Kitchen',
   },
   {
     id: 'cat-fashion',
@@ -74,7 +75,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     shortDescription: 'Sneakers, apparel & accessories',
     productCount: 50,
     image: 'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=500&q=80',
-    slug: 'Fashion%20%26%20Footwear',
+    slug: 'Fashion & Footwear',
   },
   {
     id: 'cat-beauty',
@@ -82,11 +83,16 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     shortDescription: 'Grooming tech, fragrances & care',
     productCount: 18,
     image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80',
-    slug: 'Fashion%20%26%20Footwear',
+    slug: 'Beauty & Personal Care',
   },
 ];
 
-export const PopularCategoriesSection: React.FC = () => {
+export const PopularCategoriesSection: React.FC<{ products: Product[] }> = ({ products }) => {
+  const categories = POPULAR_CATEGORIES.map((category) => ({
+    ...category,
+    productCount: products.filter((product) => product.category === category.slug).length,
+  }));
+
   return (
     <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
@@ -117,7 +123,7 @@ export const PopularCategoriesSection: React.FC = () => {
 
       {/* Responsive Grid: 5 cols desktop, 3 cols tablet, 2 cols mobile */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        {POPULAR_CATEGORIES.map((cat) => (
+        {categories.map((cat) => (
           <CategoryCard key={cat.id} category={cat} />
         ))}
       </div>
