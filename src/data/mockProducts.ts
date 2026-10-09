@@ -1,4 +1,5 @@
 ﻿import { Product } from '@/types/product';
+import { EXTRA_PRODUCTS } from '@/data/extraProducts';
 
 export const MOCK_PRODUCTS: Product[] = [
   {
@@ -778,4 +779,5 @@ export const MOCK_PRODUCTS: Product[] = [
     featured: false,
     createdAt: '2026-08-28T11:00:00Z',
   },
+  ...EXTRA_PRODUCTS,
 ];
