@@ -17,6 +17,7 @@ import {
   Info,
 } from 'lucide-react';
 import { Product } from '@/types/product';
+import { getDealUrl } from '@/services/dealUrl';
 import { SafeImage } from '../common/SafeImage';
 import { PriceTag, formatINR } from '../common/PriceTag';
 import { RatingStars } from '../common/RatingStars';
@@ -158,7 +159,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <a
-              href={bestOffer.productUrl}
+              href={getDealUrl(bestOffer, product.title)}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:flex-1 py-4 px-6 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition shadow-md shadow-indigo-600/20 flex items-center justify-center gap-2 cursor-pointer"
@@ -252,7 +253,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
             <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-xs">
               <h3 className="font-bold text-slate-900 text-base mb-2">Compare Prices Across Retailers</h3>
               <p className="text-xs text-slate-500 mb-4">Live comparison matrix showing genuine delivery and seller data</p>
-              <StoreOfferTable offers={product.offers} />
+              <StoreOfferTable offers={product.offers} productTitle={product.title} />
             </div>
           </div>
         )}
@@ -267,7 +268,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
               <p className="text-xs text-slate-500 mb-5">
                 Every &apos;View Deal&apos; button redirects directly to the authorized merchant product page.
               </p>
-              <StoreOfferTable offers={product.offers} />
+              <StoreOfferTable offers={product.offers} productTitle={product.title} />
 
               <div className="mt-5 p-4 rounded-2xl bg-slate-50 border border-slate-100 text-xs text-slate-500 flex items-start gap-2">
                 <ShieldCheck size={16} className="text-slate-400 flex-shrink-0 mt-0.5" />
@@ -360,7 +361,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
             Compare
           </button>
           <a
-            href={bestOffer.productUrl}
+            href={getDealUrl(bestOffer, product.title)}
             target="_blank"
             rel="noopener noreferrer"
             className="py-2.5 px-4 rounded-xl bg-indigo-600 text-white font-bold text-xs flex items-center gap-1 shadow-md shadow-indigo-600/20"
