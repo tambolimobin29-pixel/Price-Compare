@@ -19,6 +19,12 @@ export const ProductOfferCard: React.FC<ProductOfferCardProps> = ({
   compact = false,
 }) => {
   const isCheapest = isLowestPrice || offer.isLowestPrice;
+  const availabilityLabel =
+    offer.availability === 'in_stock'
+      ? 'In Stock'
+      : offer.availability === 'out_of_stock'
+        ? 'Out of Stock'
+        : 'Check Store';
 
   return (
     <div
@@ -47,7 +53,7 @@ export const ProductOfferCard: React.FC<ProductOfferCardProps> = ({
                 : 'bg-amber-50 text-amber-700 border border-amber-200'
             }`}
           >
-            {offer.availability === 'in_stock' ? 'In Stock' : 'Limited Stock'}
+            {availabilityLabel}
           </span>
         </div>
 
