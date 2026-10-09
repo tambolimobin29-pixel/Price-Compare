@@ -37,12 +37,11 @@ export function getDealUrl(
   offer: DealLinkOffer,
   productTitle?: string
 ): string {
-  const rawUrl =
-    typeof offer.productUrl === 'string'
-      ? offer.productUrl.trim()
-      : typeof offer.product_url === 'string'
-        ? offer.product_url.trim()
-        : '';
+  const camelCaseUrl =
+    typeof offer.productUrl === 'string' ? offer.productUrl.trim() : '';
+  const snakeCaseUrl =
+    typeof offer.product_url === 'string' ? offer.product_url.trim() : '';
+  const rawUrl = camelCaseUrl || snakeCaseUrl;
 
   if (rawUrl) {
     try {
