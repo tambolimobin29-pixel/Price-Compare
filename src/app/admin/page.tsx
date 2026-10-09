@@ -4,7 +4,7 @@ import { productService } from '@/services/productService';
 import { AdminDashboardView } from '@/components/admin/AdminDashboardView';
 
 export const metadata: Metadata = {
-  title: 'Operations Admin Console | PricePulse',
+  title: 'Operations Admin Console | PricePilot',
   description: 'Manage products, retailer integrations, and price comparison feeds.',
   robots: {
     index: false,

@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
             {/* Social Icons */}
             <div className="flex items-center gap-2 pt-2">
               <a
-                href="https://pricepulse.in"
+                href="https://PricePilot.in"
                 className="w-8 h-8 rounded-xl bg-slate-900 hover:bg-indigo-600 text-slate-400 hover:text-white flex items-center justify-center transition"
                 aria-label="Website"
               >
@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
                 <MessageCircle size={15} />
               </a>
               <a
-                href="mailto:contact@pricepulse.in"
+                href="mailto:contact@PricePilot.in"
                 className="w-8 h-8 rounded-xl bg-slate-900 hover:bg-indigo-600 text-slate-400 hover:text-white flex items-center justify-center transition"
                 aria-label="Email"
               >
@@ -196,7 +196,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
                 <Link href="/" className="hover:text-indigo-400 transition">
-                  About PricePulse
+                  About PricePilot
                 </Link>
               </li>
               <li>
@@ -246,7 +246,7 @@ export const Footer: React.FC = () => {
             <strong className="text-slate-400">Notice:</strong> Prices and availability may change. Always verify the final price on the retailer&apos;s website before purchasing. When you purchase through merchant links on our website, we may earn an affiliate commission at no additional cost to you.
           </p>
           <div className="text-slate-400 whitespace-nowrap">
-                2026 PricePulse India. All rights reserved.
+                2026 PricePilot India. All rights reserved.
           </div>
         </div>
       </div>

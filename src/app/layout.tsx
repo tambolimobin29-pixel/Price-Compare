@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | PricePulse India",
-    default: "PricePulse - Intelligent E-Commerce Price Comparison Engine",
+    template: "%s | PricePilot India",
+    default: "PricePilot - Intelligent E-Commerce Price Comparison Engine",
   },
   description:
     "Compare real-time product prices across Amazon, Flipkart, Croma, Reliance Digital, Tata CLiQ, Myntra, and Ajio. Discover the guaranteed lowest price before you buy.",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "best electronics deals",
   ],
   openGraph: {
-    title: "PricePulse - India's Smart Price Comparison Engine",
+    title: "PricePilot - India's Smart Price Comparison Engine",
     description:
       "Find the lowest prices and save thousands across Amazon, Flipkart, Croma, and Reliance Digital.",
     type: "website",

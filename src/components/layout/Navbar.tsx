@@ -2,13 +2,12 @@
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://hduvhpexwnseomkchgmi.supabase.co',
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_OKE_Msy0AQdPRccNoN1u2A_RfHohcTg'
 );
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import {
   TrendingDown,
   Menu,
@@ -37,7 +36,6 @@ export const Navbar: React.FC = () => {
 
   const { wishlistCount, compareCount } = useWishlistCompare();
 
-  // Scroll listener for sticky elevation & subtle shadow
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -65,7 +63,6 @@ export const Navbar: React.FC = () => {
             : 'border-slate-200/80 shadow-xs'
         }`}
       >
-        {/* Top micro banner */}
         <div className="bg-slate-950 text-slate-300 text-xs py-1.5 px-4 hidden md:block">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -79,16 +76,14 @@ export const Navbar: React.FC = () => {
               <span className="flex items-center gap-1 text-emerald-400 font-medium">
                 <ShieldCheck size={13} /> 100% Genuine Retailer Links
               </span>
-              <span>   </span>
+              <span>•</span>
               <span className="text-slate-300">Unbiased & Independent</span>
             </div>
           </div>
         </div>
 
-        {/* Main Navbar Bar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-18 gap-4 lg:gap-8">
-            {/* LEFT: Logo, Brand Name & Tagline */}
             <Link
               href="/"
               className="flex items-center gap-3 flex-shrink-0 group focus:outline-none"
@@ -98,7 +93,7 @@ export const Navbar: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-black text-xl tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors">
-                  Price<span className="text-indigo-600">Pulse</span>
+                  Price<span className="text-indigo-600">Pilot</span>
                 </span>
                 <span className="text-[10px] font-semibold text-slate-400 -mt-1 tracking-wider">
                   Compare. Save. Shop.
@@ -106,14 +101,11 @@ export const Navbar: React.FC = () => {
               </div>
             </Link>
 
-            {/* CENTER: Search Bar (Desktop / Tablet) */}
             <div className="hidden md:flex flex-1 max-w-2xl mx-auto">
               <SearchBar size="md" placeholder="Search products, brands and categories..." />
             </div>
 
-            {/* RIGHT: Wishlist, Compare & Profile / Login Buttons */}
             <div className="flex items-center gap-1.5 sm:gap-2">
-              {/* Mobile Search Toggle */}
               <button
                 type="button"
                 onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
@@ -123,7 +115,6 @@ export const Navbar: React.FC = () => {
                 <Search size={20} />
               </button>
 
-              {/* Compare Button with Badge */}
               <Link
                 href="/compare"
                 className="relative p-2.5 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-indigo-50/60 transition"
@@ -138,7 +129,6 @@ export const Navbar: React.FC = () => {
                 )}
               </Link>
 
-              {/* Wishlist Button with Badge */}
               <Link
                 href="/wishlist"
                 className="relative p-2.5 rounded-xl text-slate-600 hover:text-rose-600 hover:bg-rose-50/60 transition"
@@ -153,7 +143,6 @@ export const Navbar: React.FC = () => {
                 )}
               </Link>
 
-              {/* Login / Profile Button */}
               <button
                 type="button"
                 onClick={() => setAuthModalOpen(true)}
@@ -163,7 +152,6 @@ export const Navbar: React.FC = () => {
                 <span>Sign In</span>
               </button>
 
-              {/* Mobile Menu Button */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -175,7 +163,6 @@ export const Navbar: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Search Bar toggle drawer */}
           {mobileSearchOpen && (
             <div className="md:hidden pb-3 animate-in fade-in slide-in-from-top-1 duration-150">
               <SearchBar size="md" placeholder="Search products, brands, categories..." />
@@ -183,7 +170,6 @@ export const Navbar: React.FC = () => {
           )}
         </div>
 
-        {/* Secondary Category Ribbon (Desktop) */}
         <nav className="hidden md:block border-t border-slate-100 bg-slate-50/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ul className="flex items-center gap-1 py-1.5 overflow-x-auto text-xs font-medium text-slate-600">
@@ -205,7 +191,6 @@ export const Navbar: React.FC = () => {
           </div>
         </nav>
 
-        {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-b border-slate-200 shadow-xl px-4 py-4 space-y-3 animate-in fade-in duration-150">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -244,7 +229,6 @@ export const Navbar: React.FC = () => {
         )}
       </header>
 
-      {/* Auth / Profile Modal (Mock integration ready for Supabase/NextAuth) */}
       {authModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-xs p-4 animate-in fade-in duration-150">
           <div className="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200 relative">
@@ -260,13 +244,12 @@ export const Navbar: React.FC = () => {
                 <User size={24} />
               </div>
               <h3 className="text-lg font-extrabold text-slate-900">
-                Welcome to PricePulse
+                Welcome to PricePilot
               </h3>
               <p className="text-xs text-slate-500 mt-1">
                 Save wishlists, track price drops across stores, and personalize alerts.
               </p>
             </div>
-
 
             <form
               onSubmit={async (e) => {
@@ -274,14 +257,14 @@ export const Navbar: React.FC = () => {
                 const form = e.currentTarget;
                 const emailInput = form.elements[0] as HTMLInputElement;
                 const passwordInput = form.elements[1] as HTMLInputElement;
-                const { error } = await supabase.auth.signUp({
+                const { data, error } = await supabase.auth.signUp({
                   email: emailInput.value,
                   password: passwordInput.value,
                 });
                 if (error) {
-                  alert(error.message);
+                  alert(`Auth Error: ${error.message}`);
                 } else {
-                  alert('User registered in Supabase successfully!');
+                  alert(`User registered in Supabase successfully! UID: ${data.user?.id || 'Done'}`);
                   setAuthModalOpen(false);
                 }
               }}
@@ -294,7 +277,7 @@ export const Navbar: React.FC = () => {
                 <input
                   type="email"
                   placeholder="name@example.com"
-                  defaultValue="shopper@pricepulse.in"
+                  defaultValue="shopper@pricepilot.in"
                   className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-indigo-600"
                   required
                 />
@@ -305,7 +288,7 @@ export const Navbar: React.FC = () => {
                 </label>
                 <input
                   type="password"
-                  placeholder="                        "
+                  placeholder="Minimum 6 characters"
                   defaultValue="secret123"
                   className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-indigo-600"
                   required

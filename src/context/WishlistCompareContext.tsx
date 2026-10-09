@@ -30,8 +30,8 @@ export const WishlistCompareProvider: React.FC<{ children: React.ReactNode }> = 
   // Initialize from localStorage on mount
   useEffect(() => {
     try {
-      const savedWishlist = localStorage.getItem('pricepulse_wishlist');
-      const savedCompare = localStorage.getItem('pricepulse_compare');
+      const savedWishlist = localStorage.getItem('PricePilot_wishlist');
+      const savedCompare = localStorage.getItem('PricePilot_compare');
       if (savedWishlist) setWishlistIds(JSON.parse(savedWishlist));
       if (savedCompare) setCompareIds(JSON.parse(savedCompare));
     } catch (e) {
@@ -45,7 +45,7 @@ export const WishlistCompareProvider: React.FC<{ children: React.ReactNode }> = 
   useEffect(() => {
     if (!isInitialized) return;
     try {
-      localStorage.setItem('pricepulse_wishlist', JSON.stringify(wishlistIds));
+      localStorage.setItem('PricePilot_wishlist', JSON.stringify(wishlistIds));
     } catch (e) {
       console.error('Failed to write wishlist to localStorage', e);
     }
@@ -54,7 +54,7 @@ export const WishlistCompareProvider: React.FC<{ children: React.ReactNode }> = 
   useEffect(() => {
     if (!isInitialized) return;
     try {
-      localStorage.setItem('pricepulse_compare', JSON.stringify(compareIds));
+      localStorage.setItem('PricePilot_compare', JSON.stringify(compareIds));
     } catch (e) {
       console.error('Failed to write compare to localStorage', e);
     }

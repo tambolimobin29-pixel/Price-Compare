@@ -63,7 +63,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 4. Why Compare with PricePulse */}
+      {/* 4. Why Compare with PricePilot */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-wider text-indigo-600">
