@@ -22,7 +22,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
 }) => {
   return (
     <Link
-      href={`/search?category=${encodeURIComponent(category.name)}`}
+      href={`/search?category=${encodeURIComponent(category.slug || category.name)}`}
       className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white border border-slate-200/90 hover:border-indigo-300 p-4 transition-all duration-300 shadow-xs hover:shadow-xl hover:-translate-y-1.5 focus:outline-none ${className}`}
     >
       {/* Category Image Container */}
