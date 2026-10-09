@@ -44,13 +44,13 @@ export default async function Home() {
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-2">
                 <Sparkles size={13} />
-                <span>Maximum Savings Today</span>
+                <span>Sample Price Differences</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Biggest Price Differences
               </h2>
               <p className="text-xs sm:text-sm text-slate-500 mt-1">
-                Products where buying from the right store saves you up to ₹10,000
+                Example price gaps across catalog listings; verify current prices with each retailer
               </p>
             </div>
             <Link
@@ -87,10 +87,10 @@ export default async function Home() {
               1
             </div>
             <h3 className="font-bold text-slate-900 text-base">
-              Multi-Store Cross-Reference
+              Browse Retailer Listings
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              We monitor identical SKUs across Amazon, Flipkart, Croma, Reliance Digital, and more, matching specs and model numbers.
+              Open retailer search pages for popular products and confirm the exact model, price and specifications at the store.
             </p>
           </div>
 
@@ -100,10 +100,10 @@ export default async function Home() {
               2
             </div>
             <h3 className="font-bold text-slate-900 text-base">
-              Spot the Lowest Price & Savings
+              Compare Sample Price Estimates
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              We calculate the exact price difference so you know immediately: Where is it cheapest, and how much are you saving?
+              Example prices illustrate how cross-store comparisons work. They are not live quotes or guaranteed savings.
             </p>
           </div>
 
@@ -113,10 +113,10 @@ export default async function Home() {
               3
             </div>
             <h3 className="font-bold text-slate-900 text-base">
-              Direct Official Merchant Links
+              Open Retailer Search Pages
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Click &quot;View Deal&quot; to land directly on the merchant&apos;s product page. No intermediary markups or delays.
+              View Deal opens the retailer's search results. Confirm the exact product listing before you purchase.
             </p>
           </div>
         </div>
