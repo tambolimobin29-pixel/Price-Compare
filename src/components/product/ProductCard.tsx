@@ -12,6 +12,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { Product } from '@/types/product';
+import { getDealUrl } from '@/services/dealUrl';
 import { SafeImage } from '../common/SafeImage';
 import { PriceTag, formatINR } from '../common/PriceTag';
 import { RatingStars } from '../common/RatingStars';
@@ -194,7 +195,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </Link>
 
             <a
-              href={bestOffer.productUrl}
+              href={getDealUrl(bestOffer, product.title)}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs transition flex items-center justify-center gap-1.5 shadow-xs cursor-pointer"
