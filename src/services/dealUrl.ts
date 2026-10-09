@@ -20,7 +20,7 @@ function buildStoreSearchUrl(storeId: StoreId, query: string): string {
     case 'tata-cliq':
       return `https://www.tatacliq.com/search/?text=${encodedQuery}`;
     case 'myntra':
-      return `https://www.myntra.com/${query.trim().split(/\\s+/).map(encodeURIComponent).join('-')}`;
+      return `https://www.myntra.com/${query.trim().split(/\s+/).map(encodeURIComponent).join('-')}`;
     case 'ajio':
       return `https://www.ajio.com/search/?text=${encodedQuery}`;
     default:
