@@ -105,7 +105,7 @@ export const PopularCategoriesSection: React.FC<{ products: Product[] }> = ({ pr
             Shop by Department
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Compare verified prices across 10 top consumer categories in India
+            Browse the available catalog across 10 product groups
           </p>
         </div>
 
