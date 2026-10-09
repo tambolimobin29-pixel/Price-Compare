@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: "PricePilot - Intelligent E-Commerce Price Comparison Engine",
   },
   description:
-    "Compare real-time product prices across Amazon, Flipkart, Croma, Reliance Digital, Tata CLiQ, Myntra, and Ajio. Discover the guaranteed lowest price before you buy.",
+    "Browse a demo product catalog with retailer search links across Amazon, Flipkart, Croma, Reliance Digital, Tata CLiQ, Myntra, and Ajio. Confirm live prices and availability with each retailer.",
   keywords: [
     "price comparison",
     "compare prices india",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PricePilot - India's Smart Price Comparison Engine",
     description:
-      "Find the lowest prices and save thousands across Amazon, Flipkart, Croma, and Reliance Digital.",
+      "Browse sample catalog products and retailer search links. Confirm current prices and stock with each store.",
     type: "website",
     locale: "en_IN",
   },
@@ -53,6 +53,12 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900">
         <WishlistCompareProvider>
           <Navbar />
+          <div
+            role="note"
+            className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-[11px] leading-relaxed text-amber-900 sm:text-xs"
+          >
+            Demo catalog: prices, ratings and availability are examples, not live feeds. Retailer links open search results; confirm the exact product and current price before buying.
+          </div>
           <main className="flex-1">{children}</main>
           <Footer />
           <ChatBot/>
