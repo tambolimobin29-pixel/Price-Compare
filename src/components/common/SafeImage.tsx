@@ -1,7 +1,6 @@
 ﻿'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
 import { Package } from 'lucide-react';
 
 interface SafeImageProps {
@@ -27,6 +26,12 @@ export const SafeImage: React.FC<SafeImageProps> = ({
   const [imgSrc, setImgSrc] = useState(src || FALLBACK_IMAGE);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setImgSrc(src || FALLBACK_IMAGE);
+    setHasError(false);
+    setIsLoading(true);
+  }, [src]);
 
   const aspectClasses = {
     square: 'aspect-square',
@@ -57,6 +62,11 @@ export const SafeImage: React.FC<SafeImageProps> = ({
           decoding="async"
           onLoad={() => setIsLoading(false)}
           onError={() => {
+            if (imgSrc !== FALLBACK_IMAGE) {
+              setImgSrc(FALLBACK_IMAGE);
+              setIsLoading(true);
+              return;
+            }
             setHasError(true);
             setIsLoading(false);
           }}
