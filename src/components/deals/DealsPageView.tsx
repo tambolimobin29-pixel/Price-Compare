@@ -102,13 +102,13 @@ export const DealsPageView: React.FC<DealsPageViewProps> = ({
           <div className="relative z-10 max-w-2xl space-y-4">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-bold uppercase tracking-wider">
               <Percent size={14} className="text-rose-400" />
-              <span>Verified Store Discounts</span>
+              <span>Sample Retailer Listings</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
               Today&apos;s Best Deals
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Compare prices and discover products currently available at lower prices across Amazon, Flipkart, Croma, and Reliance Digital.
+              Browse sample catalog products and open retailer search pages to check current products, prices and availability.
             </p>
           </div>
         </div>
