@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExternalLink, Truck, ShieldCheck, Clock, CheckCircle } from 'lucide-react';
 import { Offer } from '@/types/product';
+import { getDealUrl } from '@/services/dealUrl';
 import { StoreBadge } from '../common/StoreBadge';
 import { PriceTag, formatINR } from '../common/PriceTag';
 
@@ -84,7 +85,7 @@ export const ProductOfferCard: React.FC<ProductOfferCardProps> = ({
 
       {/* View Deal Button */}
       <a
-        href={offer.productUrl}
+        href={getDealUrl(offer)}
         target="_blank"
         rel="noopener noreferrer"
         className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs transition flex items-center justify-center gap-1.5 shadow-xs cursor-pointer ${
