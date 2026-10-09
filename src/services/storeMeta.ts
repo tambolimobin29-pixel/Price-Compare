@@ -1,0 +1,87 @@
+﻿import { StoreId, StoreMeta } from '@/types/product';
+
+export const STORE_REGISTRY: Record<StoreId, StoreMeta> = {
+  amazon: {
+    id: 'amazon',
+    name: 'Amazon India',
+    shortName: 'Amazon',
+    badgeBg: 'bg-amber-50',
+    badgeText: 'text-amber-900',
+    badgeBorder: 'border-amber-200',
+    primaryColor: '#FF9900',
+    domain: 'amazon.in',
+  },
+  flipkart: {
+    id: 'flipkart',
+    name: 'Flipkart',
+    shortName: 'Flipkart',
+    badgeBg: 'bg-blue-50',
+    badgeText: 'text-blue-700',
+    badgeBorder: 'border-blue-200',
+    primaryColor: '#2874F0',
+    domain: 'flipkart.com',
+  },
+  croma: {
+    id: 'croma',
+    name: 'Croma',
+    shortName: 'Croma',
+    badgeBg: 'bg-emerald-50',
+    badgeText: 'text-emerald-800',
+    badgeBorder: 'border-emerald-200',
+    primaryColor: '#008779',
+    domain: 'croma.com',
+  },
+  'reliance-digital': {
+    id: 'reliance-digital',
+    name: 'Reliance Digital',
+    shortName: 'Reliance',
+    badgeBg: 'bg-red-50',
+    badgeText: 'text-red-700',
+    badgeBorder: 'border-red-200',
+    primaryColor: '#E42529',
+    domain: 'reliancedigital.in',
+  },
+  'tata-cliq': {
+    id: 'tata-cliq',
+    name: 'Tata CLiQ',
+    shortName: 'Tata CLiQ',
+    badgeBg: 'bg-rose-50',
+    badgeText: 'text-rose-900',
+    badgeBorder: 'border-rose-200',
+    primaryColor: '#880039',
+    domain: 'tatacliq.com',
+  },
+  myntra: {
+    id: 'myntra',
+    name: 'Myntra',
+    shortName: 'Myntra',
+    badgeBg: 'bg-pink-50',
+    badgeText: 'text-pink-700',
+    badgeBorder: 'border-pink-200',
+    primaryColor: '#FF3F6C',
+    domain: 'myntra.com',
+  },
+  ajio: {
+    id: 'ajio',
+    name: 'Ajio Luxe & Trends',
+    shortName: 'Ajio',
+    badgeBg: 'bg-slate-100',
+    badgeText: 'text-slate-800',
+    badgeBorder: 'border-slate-300',
+    primaryColor: '#2C4152',
+    domain: 'ajio.com',
+  },
+};
+
+export function getStoreMeta(storeId: StoreId): StoreMeta {
+  return STORE_REGISTRY[storeId] || {
+    id: storeId,
+    name: storeId,
+    shortName: storeId,
+    badgeBg: 'bg-slate-50',
+    badgeText: 'text-slate-700',
+    badgeBorder: 'border-slate-200',
+    primaryColor: '#4F46E5',
+    domain: 'example.com',
+  };
+}

@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Tokens: Modern Blue/Purple Accent */
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #eef2ff;
+  --primary-dark: #3730a3;
+  --secondary: #7c3aed;
+  --secondary-light: #f5f3ff;
+
+  /* Surfaces & Backgrounds */
+  --background: #f8fafc;
+  --card: #ffffff;
+  --card-border: #e2e8f0;
+  --card-hover-border: #cbd5e1;
+  --surface-muted: #f1f5f9;
+
+  /* Typography */
+  --text-main: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  /* Comparison Indicators */
+  --lowest-price: #059669;
+  --lowest-price-bg: #ecfdf5;
+  --lowest-price-border: #a7f3d0;
+  
+  --discount-accent: #e11d48;
+  --discount-bg: #fff1f2;
+  --discount-border: #fecdd3;
+
+  /* Store Brand Palette */
+  --store-amazon: #ff9900;
+  --store-flipkart: #2874f0;
+  --store-croma: #008779;
+  --store-reliance: #e42529;
+  --store-tatacliq: #880039;
+  --store-myntra: #ff3f6c;
+  --store-ajio: #2c4152;
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+
+  --color-bg-main: var(--background);
+  --color-card-surface: var(--card);
+  --color-card-border: var(--card-border);
+  --color-card-hover: var(--card-hover-border);
+  --color-surface-muted: var(--surface-muted);
+
+  --color-text-main: var(--text-main);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-lowest: var(--lowest-price);
+  --color-lowest-bg: var(--lowest-price-bg);
+  --color-lowest-border: var(--lowest-price-border);
+
+  --color-discount: var(--discount-accent);
+  --color-discount-bg: var(--discount-bg);
+  --color-discount-border: var(--discount-border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-main);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar for sleek UI */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Premium card hover shadows */
+.card-hover-effect {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-effect:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+}
+
+/* Glassmorphism subtle surface */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
