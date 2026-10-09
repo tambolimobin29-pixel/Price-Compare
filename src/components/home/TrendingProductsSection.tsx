@@ -23,7 +23,7 @@ export const TrendingProductsSection: React.FC<TrendingProductsSectionProps> = (
             Most Compared Products Today
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Real-time price comparisons across India&apos;s leading e-commerce platforms
+            Browse sample catalog products. Open a retailer search to confirm the exact item and current price.
           </p>
         </div>
 
