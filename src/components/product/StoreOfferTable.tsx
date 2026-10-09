@@ -1,16 +1,19 @@
 ﻿import React from 'react';
 import { ExternalLink, CheckCircle2, Truck, ShieldCheck, Tag } from 'lucide-react';
 import { Offer } from '@/types/product';
+import { getDealUrl } from '@/services/dealUrl';
 import { StoreBadge } from '../common/StoreBadge';
 import { formatINR } from '../common/PriceTag';
 
 interface StoreOfferTableProps {
   offers: Offer[];
+  productTitle?: string;
   className?: string;
 }
 
 export const StoreOfferTable: React.FC<StoreOfferTableProps> = ({
   offers,
+  productTitle,
   className = '',
 }) => {
   const sortedOffers = [...offers].sort((a, b) => a.price - b.price);
@@ -117,7 +120,7 @@ export const StoreOfferTable: React.FC<StoreOfferTableProps> = ({
                 {/* Buy Button */}
                 <td className="py-4 px-4 align-middle text-right">
                   <a
-                    href={offer.productUrl}
+                    href={getDealUrl(offer, productTitle)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl font-bold text-xs transition shadow-xs cursor-pointer ${
