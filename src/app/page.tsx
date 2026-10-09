@@ -20,8 +20,11 @@ import { ProductGrid } from "@/components/product/ProductGrid";
 import { productService } from "@/services/productService";
 
 export default async function Home() {
-  const featuredProducts = await productService.getFeaturedProducts();
-  const topDeals = await productService.getTopDeals();
+  const [featuredProducts, topDeals, products] = await Promise.all([
+    productService.getFeaturedProducts(),
+    productService.getTopDeals(),
+    productService.getProducts(),
+  ]);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -29,7 +32,7 @@ export default async function Home() {
       <HeroSection />
 
       {/* 2. Popular Categories Section (Component 4) */}
-      <PopularCategoriesSection />
+      <PopularCategoriesSection products={products} />
 
       {/* 3. Trending Products Section (Component 5) */}
       <TrendingProductsSection products={featuredProducts} />
