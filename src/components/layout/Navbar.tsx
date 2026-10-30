@@ -93,7 +93,7 @@ export const Navbar: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-black text-xl tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors">
-                  Price<span className="text-indigo-600">Pilot</span>
+                  Price <span className="text-indigo-600">Compare</span>
                 </span>
                 <span className="text-[10px] font-semibold text-slate-400 -mt-1 tracking-wider">
                   Compare. Save. Shop.
@@ -244,7 +244,7 @@ export const Navbar: React.FC = () => {
                 <User size={24} />
               </div>
               <h3 className="text-lg font-extrabold text-slate-900">
-                Welcome to PricePilot
+                Welcome to Price Compare
               </h3>
               <p className="text-xs text-slate-500 mt-1">
                 Save wishlists, track price drops across stores, and personalize alerts.
