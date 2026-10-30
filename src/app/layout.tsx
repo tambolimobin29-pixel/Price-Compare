@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | PricePilot India",
-    default: "PricePilot - Intelligent E-Commerce Price Comparison Engine",
+    template: "%s | Price Compare",
+    default: "Price Compare - Intelligent E-Commerce Price Comparison Engine",
   },
   description:
     "Browse a demo product catalog with retailer search links across Amazon, Flipkart, Croma, Reliance Digital, Tata CLiQ, Myntra, and Ajio. Confirm live prices and availability with each retailer.",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "best electronics deals",
   ],
   openGraph: {
-    title: "PricePilot - India's Smart Price Comparison Engine",
+    title: "Price Compare - India's Smart Price Comparison Engine",
     description:
       "Browse sample catalog products and retailer search links. Confirm current prices and stock with each store.",
     type: "website",
