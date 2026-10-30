@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-black text-xl tracking-tight text-white">
-                  Price<span className="text-indigo-400">Pulse</span>
+                  Price <span className="text-indigo-400">Compare</span>
                 </span>
                 <span className="text-[10px] font-semibold text-slate-500 tracking-wider">
                   Compare. Save. Shop.
@@ -196,7 +196,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
                 <Link href="/" className="hover:text-indigo-400 transition">
-                  About PricePilot
+                  About Price Compare
                 </Link>
               </li>
               <li>
@@ -246,7 +246,7 @@ export const Footer: React.FC = () => {
             <strong className="text-slate-400">Notice:</strong> Prices and availability may change. Always verify the final price on the retailer&apos;s website before purchasing. When you purchase through merchant links on our website, we may earn an affiliate commission at no additional cost to you.
           </p>
           <div className="text-slate-400 whitespace-nowrap">
-                2026 PricePilot India. All rights reserved.
+                2026 Price Compare. All rights reserved.
           </div>
         </div>
       </div>
