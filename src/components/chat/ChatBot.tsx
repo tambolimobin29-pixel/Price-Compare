@@ -30,7 +30,7 @@ export const ChatBot: React.FC = () => {
   }>>([
     {
       sender: 'bot',
-      text: 'Namaste! Main PricePilot AI assistant hoon. Hamare catalogue me 7 live verified products hain. Aap kiska price compare karna chahte hain?',
+      text: 'Namaste! Main Price Compare AI assistant hoon. Hamare catalogue me 7 live verified products hain. Aap kiska price compare karna chahte hain?',
     },
   ]);
 
@@ -127,7 +127,7 @@ export const ChatBot: React.FC = () => {
           type="button"
           onClick={() => setIsOpen(true)}
           className="w-14 h-14 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white flex items-center justify-center shadow-2xl transition hover:scale-105 cursor-pointer relative"
-          aria-label="Open PricePilot Chat"
+          aria-label="Open Price Compare Chat"
         >
           <MessageSquare size={24} />
           <span className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white animate-pulse" />
@@ -141,7 +141,7 @@ export const ChatBot: React.FC = () => {
                 <Bot size={18} />
               </div>
               <div>
-                <span className="font-bold text-xs block">PricePilot Assistant</span>
+                <span className="font-bold text-xs block">Price Compare Assistant</span>
                 <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
                   ● {products.length > 0 ? `${products.length} Products Synced` : 'Connecting DB...'}
                 </span>
