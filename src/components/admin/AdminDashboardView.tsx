@@ -80,7 +80,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
 
           <div>
             <h2 className="text-xl font-extrabold text-white">
-              PricePilot Admin Portal
+              Price Compare Admin Portal
             </h2>
             <p className="text-xs text-slate-400 mt-1">
               Restricted management area for retailer adapters, product feeds & telemetry
@@ -147,7 +147,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           </div>
           <div>
             <h1 className="text-sm font-extrabold text-white flex items-center gap-2">
-              <span>PricePilot Operations Console</span>
+              <span>Price Compare Operations Console</span>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 Live Console
               </span>
